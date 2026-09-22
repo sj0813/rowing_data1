@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GCBME 2026: Interactive Sensor Validation Dashboards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased p-6 font-sans">
+
+<!-- UNIVERSAL NAVIGATION SWITCHER BAR -->
+<div class="bg-slate-900 text-white px-5 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-md border-b border-slate-800 text-xs sticky top-0 z-50">
+  <div class="flex items-center space-x-2">
+    <a href="index.html" class="flex items-center space-x-1.5 text-blue-400 hover:text-blue-300 transition-colors">
+      <span class="text-sm">🚣</span>
+      <span class="font-extrabold tracking-wide uppercase">GCBME 2026 Suite</span>
+    </a>
+    <span class="text-slate-600">|</span>
+    <span class="text-slate-400 font-medium hidden sm:inline">Ergometer Sensor Validation</span>
+  </div>
+  
+  <div class="flex items-center space-x-1 bg-slate-800 p-1 rounded-xl border border-slate-700">
+    <a href="index.html" class="px-2.5 py-1 rounded-lg bg-blue-600 text-white shadow-sm transition-all font-semibold flex items-center gap-1.5">
+      <span>🏠</span> <span class="hidden md:inline">Main Hub</span>
+    </a>
+    <a href="raw_multichannel_rowing_dashboard.html" class="px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700 transition-all font-semibold flex items-center gap-1.5">
+      <span>📈</span> <span>1. Raw Multi-Channel</span>
+    </a>
+    <a href="gyro_synchronization_dashboard.html" class="px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700 transition-all font-semibold flex items-center gap-1.5">
+      <span>⏱️</span> <span>2. Gyro Sync</span>
+    </a>
+    <a href="rowing_cycle_dissection_dashboard.html" class="px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700 transition-all font-semibold flex items-center gap-1.5">
+      <span>📊</span> <span>3. Cycle Dissection</span>
+    </a>
+  </div>
+
+  <div class="flex items-center space-x-1.5">
+    <a href="rowing_cycle_dissection_dashboard.html" title="Previous Dashboard" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-medium transition-all flex items-center gap-1">
+      &larr; <span class="hidden sm:inline">Prev</span>
+    </a>
+    <a href="raw_multichannel_rowing_dashboard.html" title="Next Dashboard" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all shadow flex items-center gap-1">
+      <span class="hidden sm:inline">Next</span> &rarr;
+    </a>
+  </div>
+</div>
+
+  <div class="max-w-4xl mx-auto space-y-6 mt-4">
+    
+    <!-- Header -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold uppercase tracking-wider mb-2">
+        GCBME 2026 Conference Study
+      </div>
+      <h1 class="text-2xl font-black text-slate-900 tracking-tight">Ergometer Multi-Sensor Validation Dashboards</h1>
+      <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+        Interactive visualization dashboards for sensor clock synchronization, stroke cycle dissection (Catch-to-Catch), phase breakdown, and multi-device kinematic/kinetic coordination.
+      </p>
+    </div>
+
+    <!-- Dashboard Cards (Ordered: 1. Raw Multi-Channel, 2. Gyro Sync, 3. Cycle Dissection) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <!-- Card 4: Multi-Day Kinematic Consistency Bar Charts -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4 md:col-span-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="space-y-1">
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-200 uppercase tracking-wider">Conference Figure 2</span>
+              <h2 class="text-base font-bold text-slate-900">Multi-Day Kinematic Consistency Analysis (Bar Charts)</h2>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Comparison of Raw Phase Durations (Drive 2.02–2.07s, Recovery 0.92–0.98s, Total 2.98–3.00s) and Normalized Cycle Proportions (Drive 67.4–69.2%, Recovery 30.8–32.6%) across all 295 consecutive strokes over 3 testing days.
+            </p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <a href="#sectionBarCharts" class="py-2 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition-all shadow-sm flex items-center gap-1.5">
+              <span>📊</span> <span>Jump to Bar Charts &darr;</span>
+            </a>
+            <a href="rowing_cycle_dissection_dashboard.html" class="py-2 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold transition-all shadow-sm flex items-center gap-1.5">
+              <span>📈</span> <span>Inspect in Cycle Dissection &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      
+      <!-- Card 1: Raw Multi-Channel (1st) -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-800">1st: Raw Continuous Time</span>
+            <span class="text-xs text-slate-400 font-semibold">Seconds</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">1. Raw Multi-Channel Dashboard</h2>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Continuous raw signals across physical seconds without time normalization. 6 vertically aligned panels: <strong>Loadcell Pull (0–320 N)</strong>, <strong>Novel Hand (0–500 N)</strong>, <strong>Novel Thumb (0–50 N)</strong>, <strong>Footplates (0–550 N)</strong>, <strong>Foot Sub-Regions (0–200 N)</strong>, and <strong>3-Way Gyros (0–300 °/s)</strong>.
+          </p>
+          <div class="pt-1 flex flex-wrap gap-1 text-[10.5px] text-slate-500 font-medium">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">All 295 Strokes</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Hand &amp; Thumb Separated</span>
+          </div>
+        </div>
+        <a href="raw_multichannel_rowing_dashboard.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-all shadow-sm">
+          Open 1. Raw Multi-Channel &rarr;
+        </a>
+      </div>
+
+      <!-- Card 2: Gyroscope Synchronization (2nd) -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-800">2nd: Kinematic Sync</span>
+            <span class="text-xs text-slate-400 font-semibold">Anchors</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">2. Gyroscope Sync Dashboard</h2>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Independent kinematic synchronization using 3-axis resultant angular velocity (G_res). Toggle between <em>Before Sync (Raw Clocks)</em> and <em>After Sync (Aligned Time)</em>, compare 1-column stacked vs overlay, and inspect hardware clock drift (~103 ppm).
+          </p>
+          <div class="pt-1 flex flex-wrap gap-1 text-[10.5px] text-slate-500 font-medium">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Start 90° Anchor (~13s)</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">End 90° Anchor (~312s)</span>
+          </div>
+        </div>
+        <a href="gyro_synchronization_dashboard.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold transition-all shadow-sm">
+          Open 2. Gyro Sync &rarr;
+        </a>
+      </div>
+
+      <!-- Card 3: Cycle Dissection (3rd) -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800">3rd: Cycle Dissection</span>
+            <span class="text-xs text-slate-400 font-semibold">Biomechanical</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">3. Cycle Dissection Dashboard</h2>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Catch-to-Catch (F &gt; 6.0 N) stroke cycle dissection. Drive ($2.14 \pm 0.09	ext{ s}$, $71.5\%$) and Recovery ($0.86 \pm 0.12	ext{ s}$, $28.5\%$) phase breakdown, cadence ($20.02 \pm 0.80	ext{ SPM}$), superimposed 0–100% curves, and complete 295-stroke table.
+          </p>
+          <div class="pt-1 flex flex-wrap gap-1 text-[10.5px] text-slate-500 font-medium">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Peak-Anchored Catch/Finish</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">All 295 Strokes Table</span>
+          </div>
+        </div>
+        <a href="rowing_cycle_dissection_dashboard.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-sm">
+          Open 3. Cycle Dissection &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    
+    <!-- EMBEDDED BAR CHARTS SECTION -->
+    <div id="sectionBarCharts" class="space-y-4">
+      
+    <!-- MULTI-DAY KINEMATIC CONSISTENCY BAR CHARTS COMPONENT -->
+    <div id="barChartContainer_index" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-5">
+      
+      <!-- Component Header -->
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-200 uppercase tracking-wider">Publication Figure 2</span>
+            <h2 class="text-lg font-extrabold text-slate-900">Multi-Day Kinematic Consistency Across Days 1, 2, and 3</h2>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5">
+            Phase durations (seconds) and normalized proportions (%) across 295 consecutive strokes (Day 1: 96, Day 2: 100, Day 3: 99).
+          </p>
+        </div>
+
+        <!-- View Controls -->
+        <div class="flex items-center space-x-1.5 bg-slate-100 p-1 rounded-xl text-xs font-semibold">
+          <button onclick="setBarMode_index('both')" id="btnBoth_index" class="px-3 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm transition-all font-bold">Dual Panels [A &amp; B]</button>
+          <button onclick="setBarMode_index('raw')" id="btnRaw_index" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all font-medium">[A] Raw Seconds</button>
+          <button onclick="setBarMode_index('norm')" id="btnNorm_index" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all font-medium">[B] Normalized %</button>
+          <button onclick="setBarMode_index('figure')" id="btnFig_index" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all font-medium">📷 Paper Figure</button>
+        </div>
+      </div>
+
+      <!-- Interactive SVG Chart Area -->
+      <div id="chartSvgArea_index" class="w-full overflow-x-auto">
+        <svg id="svgBar_index" viewBox="0 0 1000 420" class="w-full max-w-5xl mx-auto h-auto select-none font-sans" style="min-width: 680px;">
+        </svg>
+      </div>
+
+      <!-- Static Paper Figure Area (hidden by default) -->
+      <div id="figureImgArea_index" class="hidden flex flex-col items-center justify-center p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+        <img src="fig3_kinematic_consistency.png" alt="Multi-Day Kinematic Consistency: Raw Time and Cycle Proportion Across Days 1, 2, and 3" class="max-w-full h-auto rounded-lg shadow-sm border border-slate-300" />
+        <p class="text-xs text-slate-500 text-center italic">Figure 2: Multi-day kinematic consistency: [A] Raw phase durations (seconds); [B] Normalized cycle proportions (%) across consecutive testing days.</p>
+      </div>
+
+      <!-- Cross-Day Metrics Comparison Table -->
+      <div class="overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full text-xs text-left border-collapse">
+          <thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+            <tr>
+              <th class="py-2.5 px-3.5">Biomechanical Metric</th>
+              <th class="py-2.5 px-3.5 text-center bg-rose-50/50 text-rose-800">Day 1 (N = 96)</th>
+              <th class="py-2.5 px-3.5 text-center bg-blue-50/50 text-blue-800">Day 2 (N = 100)</th>
+              <th class="py-2.5 px-3.5 text-center bg-emerald-50/50 text-emerald-800">Day 3 (N = 99)</th>
+              <th class="py-2.5 px-3.5 text-center bg-slate-100 font-extrabold text-slate-900">All Days (N = 295)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-600">
+            <tr class="hover:bg-slate-50">
+              <td class="py-2 px-3.5 font-semibold text-slate-800">Drive Duration (s)</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.02 ± 0.06 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.07 ± 0.05 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.05 ± 0.06 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">2.14 ± 0.09 s</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery Duration (s)</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.98 ± 0.09 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.92 ± 0.09 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.93 ± 0.11 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">0.86 ± 0.12 s</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-2 px-3.5 font-semibold text-slate-800">Total Stroke Duration (s)</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-700">3.00 ± 0.11 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.99 ± 0.08 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.98 ± 0.09 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">3.00 ± 0.12 s</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-2 px-3.5 font-semibold text-slate-800">Drive Phase Fraction (%)</td>
+              <td class="py-2 px-3.5 text-center text-rose-600">67.4 ± 2.6%</td>
+              <td class="py-2 px-3.5 text-center text-rose-600">69.2 ± 2.2%</td>
+              <td class="py-2 px-3.5 text-center text-rose-600">68.7 ± 2.8%</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">71.5 ± 2.8%</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery Phase Fraction (%)</td>
+              <td class="py-2 px-3.5 text-center text-blue-600">32.6 ± 2.6%</td>
+              <td class="py-2 px-3.5 text-center text-blue-600">30.8 ± 2.2%</td>
+              <td class="py-2 px-3.5 text-center text-blue-600">31.3 ± 2.8%</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">28.5 ± 2.8%</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-2 px-3.5 font-semibold text-slate-800">Stroke Cadence (SPM)</td>
+              <td class="py-2 px-3.5 text-center">20.05 ± 0.76</td>
+              <td class="py-2 px-3.5 text-center">20.15 ± 0.71</td>
+              <td class="py-2 px-3.5 text-center">19.96 ± 0.93</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">20.05 ± 0.80</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-2 px-3.5 font-semibold text-slate-800">Peak Handle Pull Force (N)</td>
+              <td class="py-2 px-3.5 text-center font-semibold text-amber-600">261.9 ± 29.5 N</td>
+              <td class="py-2 px-3.5 text-center font-semibold text-amber-600">238.1 ± 33.7 N</td>
+              <td class="py-2 px-3.5 text-center font-semibold text-amber-600">226.8 ± 27.7 N</td>
+              <td class="py-2 px-3.5 text-center font-bold text-amber-700 bg-slate-50/50">242.3 ± 33.1 N</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- SCRIPT FOR COMPONENT -->
+    <script>
+    (function() {
+      const uid = "index";
+      let currentMode = "both";
+
+      const BAR_DATA = {
+        days: ["Day 1", "Day 2", "Day 3"],
+        raw: {
+          drive: [2.02, 2.07, 2.05],
+          drive_sd: [0.06, 0.05, 0.06],
+          rec: [0.98, 0.92, 0.93],
+          rec_sd: [0.09, 0.09, 0.11],
+          total: [3.00, 2.99, 2.98],
+          total_sd: [0.11, 0.08, 0.09]
+        },
+        norm: {
+          drive: [67.4, 69.2, 68.7],
+          drive_sd: [2.6, 2.2, 2.8],
+          rec: [32.6, 30.8, 31.3],
+          rec_sd: [2.6, 2.2, 2.8]
+        }
+      };
+
+      window[`setBarMode_${uid}`] = function(mode) {
+        currentMode = mode;
+        const btnB = document.getElementById(`btnBoth_${uid}`);
+        const btnR = document.getElementById(`btnRaw_${uid}`);
+        const btnN = document.getElementById(`btnNorm_${uid}`);
+        const btnF = document.getElementById(`btnFig_${uid}`);
+        const areaC = document.getElementById(`chartSvgArea_${uid}`);
+        const areaF = document.getElementById(`figureImgArea_${uid}`);
+
+        [btnB, btnR, btnN, btnF].forEach(b => {
+          if (b) b.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all font-medium";
+        });
+
+        if (mode === "both") {
+          if (btnB) btnB.className = "px-3 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm transition-all font-bold";
+          if (areaC) areaC.classList.remove("hidden"); 
+          if (areaF) areaF.classList.add("hidden");
+        } else if (mode === "raw") {
+          if (btnR) btnR.className = "px-3 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm transition-all font-bold";
+          if (areaC) areaC.classList.remove("hidden"); 
+          if (areaF) areaF.classList.add("hidden");
+        } else if (mode === "norm") {
+          if (btnN) btnN.className = "px-3 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm transition-all font-bold";
+          if (areaC) areaC.classList.remove("hidden"); 
+          if (areaF) areaF.classList.add("hidden");
+        } else if (mode === "figure") {
+          if (btnF) btnF.className = "px-3 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm transition-all font-bold";
+          if (areaC) areaC.classList.add("hidden"); 
+          if (areaF) areaF.classList.remove("hidden");
+          return;
+        }
+        renderSvg();
+      };
+
+      function renderSvg() {
+        const svg = document.getElementById(`svgBar_${uid}`);
+        if (!svg) return;
+
+        let html = "";
+        const W = 1000, H = 420;
+
+        if (currentMode === "both") {
+          html += renderPanelA(45, 480, 50, 320);
+          html += renderPanelB(540, 975, 50, 320);
+        } else if (currentMode === "raw") {
+          html += renderPanelA(80, 920, 50, 320);
+        } else if (currentMode === "norm") {
+          html += renderPanelB(80, 920, 50, 320);
+        }
+
+        svg.innerHTML = html;
+      }
+
+      function renderPanelA(xMin, xMax, yTop, yBot) {
+        let s = "";
+        const pW = xMax - xMin;
+        const pH = yBot - yTop;
+        const maxY = 3.5;
+
+        // Title
+        s += `<text x="${xMin + pW/2}" y="${yTop - 24}" text-anchor="middle" font-size="13" font-weight="800" fill="#0f172a">[A] Raw Phase Durations (Seconds)</text>`;
+        s += `<text x="${xMin + pW/2}" y="${yTop - 8}" text-anchor="middle" font-size="11" font-weight="600" fill="#64748b">Consistent Across Consecutive Testing Days</text>`;
+
+        // Grid lines (0 to 3.5 s, step 0.5)
+        for (let v = 0; v <= 3.5; v += 0.5) {
+          const y = yBot - (v / maxY) * pH;
+          s += `<line x1="${xMin}" y1="${y}" x2="${xMax}" y2="${y}" stroke="${v === 0 ? "#94a3b8" : "#f1f5f9"}" stroke-width="${v === 0 ? 1.5 : 1}" ${v > 0 ? 'stroke-dasharray="3,3"' : ''} />`;
+          s += `<text x="${xMin - 8}" y="${y + 3.5}" text-anchor="end" font-size="9.5" fill="#64748b">${v.toFixed(1)}</text>`;
+        }
+
+        // Y-axis Label
+        s += `<text x="${xMin - 30}" y="${yTop + pH/2}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155" transform="rotate(-90 ${xMin - 30} ${yTop + pH/2})">Raw Duration (Seconds)</text>`;
+
+        // Legend
+        const legX = xMax - 180, legY = yTop + 10;
+        s += `<rect x="${legX}" y="${legY}" width="10" height="10" rx="2" fill="#ec4863"/>`;
+        s += `<text x="${legX + 14}" y="${legY + 8.5}" font-size="9.5" font-weight="600" fill="#334155">Drive Time (s)</text>`;
+        s += `<rect x="${legX}" y="${legY + 15}" width="10" height="10" rx="2" fill="#4a88f7"/>`;
+        s += `<text x="${legX + 14}" y="${legY + 23.5}" font-size="9.5" font-weight="600" fill="#334155">Recovery Time (s)</text>`;
+        s += `<rect x="${legX}" y="${legY + 30}" width="10" height="10" rx="2" fill="#6f7e95"/>`;
+        s += `<text x="${legX + 14}" y="${legY + 38.5}" font-size="9.5" font-weight="600" fill="#334155">Total Stroke Time (s)</text>`;
+
+        // Days Groups
+        const numDays = 3;
+        const groupW = pW / numDays;
+        const barW = Math.min(30, groupW * 0.24);
+
+        BAR_DATA.days.forEach((day, dIdx) => {
+          const gCenterX = xMin + (dIdx + 0.5) * groupW;
+          s += `<text x="${gCenterX}" y="${yBot + 18}" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">${day}</text>`;
+
+          const vals = [BAR_DATA.raw.drive[dIdx], BAR_DATA.raw.rec[dIdx], BAR_DATA.raw.total[dIdx]];
+          const sds = [BAR_DATA.raw.drive_sd[dIdx], BAR_DATA.raw.rec_sd[dIdx], BAR_DATA.raw.total_sd[dIdx]];
+          const colors = ["#ec4863", "#4a88f7", "#6f7e95"];
+          const labels = ["Drive", "Recovery", "Total"];
+
+          [-1, 0, 1].forEach((offset, bIdx) => {
+            const bx = gCenterX + offset * (barW + 2) - barW / 2;
+            const val = vals[bIdx];
+            const sd = sds[bIdx];
+            const bH = (val / maxY) * pH;
+            const by = yBot - bH;
+
+            // Bar rect with rounded top
+            s += `<rect x="${bx}" y="${by}" width="${barW}" height="${bH}" rx="3" fill="${colors[bIdx]}" opacity="0.9" class="hover:opacity-100 transition-opacity cursor-pointer">
+                    <title>${day} ${labels[bIdx]}: ${val.toFixed(2)}s ± ${sd.toFixed(2)}s</title>
+                  </rect>`;
+
+            // Value text on bar
+            if (bH > 24) {
+              s += `<text x="${bx + barW/2}" y="${yBot - bH/2 + 3.5}" text-anchor="middle" font-size="9" font-weight="700" fill="#ffffff">${val.toFixed(2)}s</text>`;
+            }
+
+            // Error bar
+            const yTopErr = yBot - ((val + sd) / maxY) * pH;
+            const yBotErr = yBot - ((val - sd) / maxY) * pH;
+            s += `<line x1="${bx + barW/2}" y1="${yTopErr}" x2="${bx + barW/2}" y2="${yBotErr}" stroke="#0f172a" stroke-width="1.2" />`;
+            s += `<line x1="${bx + barW/2 - 4}" y1="${yTopErr}" x2="${bx + barW/2 + 4}" y2="${yTopErr}" stroke="#0f172a" stroke-width="1.2" />`;
+            s += `<line x1="${bx + barW/2 - 4}" y1="${yBotErr}" x2="${bx + barW/2 + 4}" y2="${yBotErr}" stroke="#0f172a" stroke-width="1.2" />`;
+          });
+        });
+
+        return s;
+      }
+
+      function renderPanelB(xMin, xMax, yTop, yBot) {
+        let s = "";
+        const pW = xMax - xMin;
+        const pH = yBot - yTop;
+        const maxY = 100;
+
+        // Title
+        s += `<text x="${xMin + pW/2}" y="${yTop - 24}" text-anchor="middle" font-size="13" font-weight="800" fill="#0f172a">[B] Normalized Cycle Breakdown (%)</text>`;
+        s += `<text x="${xMin + pW/2}" y="${yTop - 8}" text-anchor="middle" font-size="11" font-weight="600" fill="#64748b">Drive (Pull) vs. Recovery (Return)</text>`;
+
+        // Grid lines (0 to 100%, step 20)
+        for (let v = 0; v <= 100; v += 20) {
+          const y = yBot - (v / maxY) * pH;
+          s += `<line x1="${xMin}" y1="${y}" x2="${xMax}" y2="${y}" stroke="${v === 0 ? "#94a3b8" : "#f1f5f9"}" stroke-width="${v === 0 ? 1.5 : 1}" ${v > 0 ? 'stroke-dasharray="3,3"' : ''} />`;
+          s += `<text x="${xMin - 8}" y="${y + 3.5}" text-anchor="end" font-size="9.5" fill="#64748b">${v}%</text>`;
+        }
+
+        // Y-axis Label
+        s += `<text x="${xMin - 30}" y="${yTop + pH/2}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155" transform="rotate(-90 ${xMin - 30} ${yTop + pH/2})">Normalized Proportion (%)</text>`;
+
+        // Legend
+        const legX = xMax - 160, legY = yTop + 10;
+        s += `<rect x="${legX}" y="${legY}" width="10" height="10" rx="2" fill="#ec4863"/>`;
+        s += `<text x="${legX + 14}" y="${legY + 8.5}" font-size="9.5" font-weight="600" fill="#334155">Drive Phase (%)</text>`;
+        s += `<rect x="${legX}" y="${legY + 16}" width="10" height="10" rx="2" fill="#4a88f7"/>`;
+        s += `<text x="${legX + 14}" y="${legY + 24.5}" font-size="9.5" font-weight="600" fill="#334155">Recovery Phase (%)</text>`;
+
+        // Days Groups
+        const numDays = 3;
+        const groupW = pW / numDays;
+        const barW = Math.min(34, groupW * 0.28);
+
+        BAR_DATA.days.forEach((day, dIdx) => {
+          const gCenterX = xMin + (dIdx + 0.5) * groupW;
+          s += `<text x="${gCenterX}" y="${yBot + 18}" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">${day}</text>`;
+
+          const vals = [BAR_DATA.norm.drive[dIdx], BAR_DATA.norm.rec[dIdx]];
+          const sds = [BAR_DATA.norm.drive_sd[dIdx], BAR_DATA.norm.rec_sd[dIdx]];
+          const colors = ["#ec4863", "#4a88f7"];
+          const labels = ["Drive Phase", "Recovery Phase"];
+
+          [-0.55, 0.55].forEach((offset, bIdx) => {
+            const bx = gCenterX + offset * (barW + 4) - barW / 2;
+            const val = vals[bIdx];
+            const sd = sds[bIdx];
+            const bH = (val / maxY) * pH;
+            const by = yBot - bH;
+
+            // Bar rect with rounded top
+            s += `<rect x="${bx}" y="${by}" width="${barW}" height="${bH}" rx="3" fill="${colors[bIdx]}" opacity="0.9" class="hover:opacity-100 transition-opacity cursor-pointer">
+                    <title>${day} ${labels[bIdx]}: ${val.toFixed(1)}% ± ${sd.toFixed(1)}%</title>
+                  </rect>`;
+
+            // Value text on bar
+            if (bH > 20) {
+              s += `<text x="${bx + barW/2}" y="${yBot - bH/2 + 3.5}" text-anchor="middle" font-size="9" font-weight="700" fill="#ffffff">${val.toFixed(1)}%</text>`;
+            }
+
+            // Error bar
+            const yTopErr = yBot - ((val + sd) / maxY) * pH;
+            const yBotErr = yBot - ((val - sd) / maxY) * pH;
+            s += `<line x1="${bx + barW/2}" y1="${yTopErr}" x2="${bx + barW/2}" y2="${yBotErr}" stroke="#0f172a" stroke-width="1.2" />`;
+            s += `<line x1="${bx + barW/2 - 4}" y1="${yTopErr}" x2="${bx + barW/2 + 4}" y2="${yTopErr}" stroke="#0f172a" stroke-width="1.2" />`;
+            s += `<line x1="${bx + barW/2 - 4}" y1="${yBotErr}" x2="${bx + barW/2 + 4}" y2="${yBotErr}" stroke="#0f172a" stroke-width="1.2" />`;
+          });
+        });
+
+        return s;
+      }
+
+      window[`initBar_${uid}`] = renderSvg;
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        renderSvg();
+      } else {
+        window.addEventListener("DOMContentLoaded", renderSvg);
+      }
+    })();
+    </script>
+    
+    </div>
+    
+    <!-- Quick Reference -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-5 text-xs text-slate-600 space-y-2 shadow-sm">
+      <div class="font-bold text-slate-800 text-sm">Dashboard Navigation Order:</div>
+      <ol class="list-decimal list-inside space-y-1 text-slate-600 leading-relaxed">
+        <li><strong>1. Raw Multi-Channel Time Series</strong>: View continuous signals in raw physical seconds across all 6 panels with Hand and Thumb separated.</li>
+        <li><strong>2. Gyroscope Synchronization</strong>: Inspect the 3D angular kinematic alignment between Noraxon reference, Custom Loadcell, and Novel Hand.</li>
+        <li><strong>3. Stroke Cycle Dissection</strong>: Inspect the peak-anchored Catch-to-Catch segmentation, phase breakdown, and complete stroke metrics table.</li>
+      </ol>
+    </div>
+
+  </div>
+</body>
+</html>
