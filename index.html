@@ -2,7 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GCBME 2026: Interactive Sensor Validation Dashboards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset | Chen et al. (2026)</title>
+  <meta name="description" content="Official open dataset and interactive telemetry dashboards for multi-modal sensor synchronization and palmar force metrology in indoor rowing ergometry (Chen, Firdaus, Syaifudin, 2026, Taiwan Institute of Sports Science).">
+  <meta name="author" content="Shing-Jye Chen, Tegar Anugrah Firdaus, Achmad Syaifudin">
+  <meta name="keywords" content="rowing biomechanics, wearable telemetry, loadcell metrology, clock synchronization, open dataset, TISS">
+  
+  <!-- Academic Citation Metadata (Google Scholar & Zotero standard) -->
+  <meta name="citation_title" content="Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset">
+  <meta name="citation_author" content="Chen, Shing-Jye">
+  <meta name="citation_author" content="Firdaus, Tegar Anugrah">
+  <meta name="citation_author" content="Syaifudin, Achmad">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_technical_report_institution" content="Taiwan Institute of Sports Science (TISS)">
+  <meta name="citation_conference_title" content="The 7th Global Conference on Biomedical Engineering & Annual Meeting of Taiwanese Society of Biomedical Engineering (GCBME 2026)">
+  <meta name="citation_fulltext_html_url" content="https://sj0813.github.io/rowing_data1/">
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased p-6 font-sans">
@@ -12,10 +27,10 @@
   <div class="flex items-center space-x-2">
     <a href="index.html" class="flex items-center space-x-1.5 text-blue-400 hover:text-blue-300 transition-colors">
       <span class="text-sm">🚣</span>
-      <span class="font-extrabold tracking-wide uppercase">GCBME 2026 Suite</span>
+      <span class="font-extrabold tracking-wide uppercase">GCBME 2026 | TISS BioMech Lab</span>
     </a>
     <span class="text-slate-600">|</span>
-    <span class="text-slate-400 font-medium hidden sm:inline">Ergometer Sensor Validation</span>
+    <span class="text-slate-400 font-medium hidden sm:inline">Rowing Telemetry Dataset</span>
   </div>
   
   <div class="flex items-center space-x-1 bg-slate-800 p-1 rounded-xl border border-slate-700">
@@ -45,15 +60,137 @@
 
   <div class="max-w-4xl mx-auto space-y-6 mt-4">
     
-    <!-- Header -->
-    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold uppercase tracking-wider mb-2">
-        GCBME 2026 Conference Study
+    <!-- ACADEMIC DATASET PROVENANCE & METADATA HERO CARD -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+      
+      <!-- Badges & Versioning Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-2.5 border-b border-slate-100 pb-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold uppercase tracking-wider">
+            <span>🏛️</span> GCBME 2026 Open Science Dataset
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+            <span>🔓</span> CC-BY 4.0 Open Access
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold">
+            <span>📦</span> Dataset v1.0 (2026)
+          </span>
+        </div>
+        <div class="text-xs text-slate-500 font-mono bg-slate-50 px-2.5 py-1 rounded-md border border-slate-200">
+          Formal Ref: Chen et al., 2026 [11]
+        </div>
       </div>
-      <h1 class="text-2xl font-black text-slate-900 tracking-tight">Ergometer Multi-Sensor Validation Dashboards</h1>
-      <p class="text-sm text-slate-500 mt-1 leading-relaxed">
-        Interactive visualization dashboards for sensor clock synchronization, stroke cycle dissection (Catch-to-Catch), phase breakdown, and multi-device kinematic/kinetic coordination.
-      </p>
+
+      <!-- Formal Dataset Title & Conference Study Context -->
+      <div class="space-y-2">
+        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-snug">
+          Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset
+        </h1>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Official companion open dataset and interactive telemetry dashboards for the research study:
+          <span class="font-semibold text-slate-800">"Multi-Modal Sensor Synchronization and Palmar Force Metrology in Indoor Rowing Ergometry"</span>, 
+          presented at <em>The 7th Global Conference on Biomedical Engineering &amp; Annual Meeting of Taiwanese Society of Biomedical Engineering (GCBME 2026 / TSME)</em>.
+        </p>
+      </div>
+
+      <!-- Authors & Institutions Card -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-4">
+        <div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Authors &amp; Principal Investigators</div>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm font-bold text-slate-900">
+            <span class="flex items-center gap-1">
+              Shing-Jye Chen, Ph.D.<sup class="text-blue-600 font-extrabold text-xs">1,*</sup>
+              <span class="text-xs font-normal text-slate-500">(Lead Author / PI)</span>
+            </span>
+            <span class="text-slate-300">•</span>
+            <span class="flex items-center gap-1">
+              Tegar Anugrah Firdaus<sup class="text-blue-600 font-extrabold text-xs">2</sup>
+            </span>
+            <span class="text-slate-300">•</span>
+            <span class="flex items-center gap-1">
+              Achmad Syaifudin, S.T., M.T.<sup class="text-blue-600 font-extrabold text-xs">2</sup>
+            </span>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-200 pt-3 space-y-1.5 text-xs text-slate-600">
+          <div class="flex items-start gap-2">
+            <sup class="text-blue-600 font-bold mt-0.5">1</sup>
+            <span><strong>Department of Sports Biomechanics, Taiwan Institute of Sports Science (TISS)</strong>, No. 419, Shibo Rd., Zuoying Dist., Kaohsiung 813013, Taiwan</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <sup class="text-blue-600 font-bold mt-0.5">2</sup>
+            <span><strong>Department of Medical Technology, Institut Teknologi Sepuluh Nopember (ITS)</strong>, Keputih, Sukolilo, Surabaya 60111, Indonesia</span>
+          </div>
+          <div class="flex items-start gap-2 pt-1 text-slate-500">
+            <span class="text-blue-600 font-bold">*</span>
+            <span>Correspondence &amp; Data Inquiries: <a href="mailto:chen.sj@tiss.org.tw" class="text-blue-600 hover:underline font-mono">chen.sj@tiss.org.tw</a> (Dr. Shing-Jye Chen)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dataset Specifications Highlights Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+        <div class="bg-blue-50/60 border border-blue-100 rounded-xl p-3">
+          <div class="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Cohort Scope</div>
+          <div class="text-lg font-black text-slate-900 mt-0.5">295 Strokes</div>
+          <div class="text-[11px] text-slate-500">3 Consecutive Days</div>
+        </div>
+        <div class="bg-indigo-50/60 border border-indigo-100 rounded-xl p-3">
+          <div class="text-[11px] font-bold text-indigo-700 uppercase tracking-wider">Synchrony</div>
+          <div class="text-lg font-black text-slate-900 mt-0.5">0.516 ms</div>
+          <div class="text-[11px] text-slate-500">+103.3 ppm Drift Corr.</div>
+        </div>
+        <div class="bg-amber-50/60 border border-amber-100 rounded-xl p-3">
+          <div class="text-[11px] font-bold text-amber-700 uppercase tracking-wider">Peak Pull Force</div>
+          <div class="text-lg font-black text-slate-900 mt-0.5">242.1 &plusmn; 33.6 N</div>
+          <div class="text-[11px] text-slate-500">Loadcell Metrology</div>
+        </div>
+        <div class="bg-emerald-50/60 border border-emerald-100 rounded-xl p-3">
+          <div class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">Stroke Cadence</div>
+          <div class="text-lg font-black text-slate-900 mt-0.5">20.05 &plusmn; 0.81</div>
+          <div class="text-[11px] text-slate-500">SPM (2.997 &plusmn; 0.122 s)</div>
+        </div>
+      </div>
+
+      <!-- Formal Citation & BibTeX Box -->
+      <div class="bg-slate-900 text-slate-100 rounded-xl p-4 sm:p-5 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2.5">
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">📖 Formal Dataset Citation</span>
+            <span class="text-[11px] text-slate-400 font-mono hidden sm:inline">(Reference [11] in GCBME 2026 Proceedings)</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="copyCitationText()" id="btnCopyText" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all flex items-center gap-1 border border-slate-700 cursor-pointer">
+              <span>📋</span> <span id="lblCopyText">Copy Citation</span>
+            </button>
+            <button onclick="copyBibtexText()" id="btnCopyBib" class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition-all flex items-center gap-1 shadow-sm cursor-pointer">
+              <span>📜</span> <span id="lblCopyBib">Copy BibTeX</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- IEEE / APA Citation Formatted -->
+        <div id="citationIEEE" class="text-xs text-slate-300 font-sans leading-relaxed bg-slate-950/60 p-3 rounded-lg border border-slate-800/80">
+          S.-J. Chen, T. A. Firdaus, and A. Syaifudin, "Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset," <em>Taiwan Institute of Sports Science</em>, 2026. [Online]. Available: <a href="https://sj0813.github.io/rowing_data1/" class="text-blue-400 hover:underline">https://sj0813.github.io/rowing_data1/</a>
+        </div>
+
+        <!-- Collapsible BibTeX Record -->
+        <details class="text-xs group">
+          <summary class="cursor-pointer text-slate-400 hover:text-slate-200 font-semibold select-none flex items-center gap-1.5 transition-colors">
+            <span class="text-blue-400">▶</span> <span>Click to View Complete BibTeX Entry</span>
+          </summary>
+          <pre id="bibtexContent" class="mt-2 p-3 bg-slate-950 text-emerald-400 rounded-lg font-mono text-[11px] overflow-x-auto border border-slate-800 leading-snug">@misc{chen2026rowing,
+  author       = {Chen, Shing-Jye and Firdaus, Tegar Anugrah and Syaifudin, Achmad},
+  title        = {Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset},
+  year         = {2026},
+  publisher    = {Taiwan Institute of Sports Science (TISS)},
+  howpublished = {\url{https://sj0813.github.io/rowing_data1/}},
+  note         = {The 7th Global Conference on Biomedical Engineering (GCBME 2026)}
+}</pre>
+        </details>
+      </div>
+
     </div>
 
     <!-- Dashboard Cards (Ordered: 1. Raw Multi-Channel, 2. Gyro Sync, 3. Cycle Dissection) -->
@@ -206,49 +343,49 @@
               <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.02 ± 0.06 s</td>
               <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.07 ± 0.05 s</td>
               <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.05 ± 0.06 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">2.14 ± 0.09 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">2.05 ± 0.06 s</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery Duration (s)</td>
               <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.98 ± 0.09 s</td>
               <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.92 ± 0.09 s</td>
               <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.93 ± 0.11 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">0.86 ± 0.12 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">0.94 ± 0.10 s</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Total Stroke Duration (s)</td>
               <td class="py-2 px-3.5 text-center font-bold text-slate-700">3.00 ± 0.11 s</td>
               <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.99 ± 0.08 s</td>
               <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.98 ± 0.09 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">3.00 ± 0.12 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">2.997 ± 0.122 s</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Drive Phase Fraction (%)</td>
               <td class="py-2 px-3.5 text-center text-rose-600">67.4 ± 2.6%</td>
               <td class="py-2 px-3.5 text-center text-rose-600">69.2 ± 2.2%</td>
               <td class="py-2 px-3.5 text-center text-rose-600">68.7 ± 2.8%</td>
-              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">71.5 ± 2.8%</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">68.4 ± 2.6%</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery Phase Fraction (%)</td>
               <td class="py-2 px-3.5 text-center text-blue-600">32.6 ± 2.6%</td>
               <td class="py-2 px-3.5 text-center text-blue-600">30.8 ± 2.2%</td>
               <td class="py-2 px-3.5 text-center text-blue-600">31.3 ± 2.8%</td>
-              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">28.5 ± 2.8%</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">31.6 ± 2.6%</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Stroke Cadence (SPM)</td>
               <td class="py-2 px-3.5 text-center">20.05 ± 0.76</td>
               <td class="py-2 px-3.5 text-center">20.15 ± 0.71</td>
               <td class="py-2 px-3.5 text-center">19.96 ± 0.93</td>
-              <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">20.05 ± 0.80</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">20.05 ± 0.81</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Peak Handle Pull Force (N)</td>
               <td class="py-2 px-3.5 text-center font-semibold text-amber-600">261.9 ± 29.5 N</td>
               <td class="py-2 px-3.5 text-center font-semibold text-amber-600">238.1 ± 33.7 N</td>
               <td class="py-2 px-3.5 text-center font-semibold text-amber-600">226.8 ± 27.7 N</td>
-              <td class="py-2 px-3.5 text-center font-bold text-amber-700 bg-slate-50/50">242.3 ± 33.1 N</td>
+              <td class="py-2 px-3.5 text-center font-bold text-amber-700 bg-slate-50/50">242.1 ± 33.6 N</td>
             </tr>
           </tbody>
         </table>
@@ -495,7 +632,54 @@
         <li><strong>3. Stroke Cycle Dissection</strong>: Inspect the peak-anchored Catch-to-Catch segmentation, phase breakdown, and complete stroke metrics table.</li>
       </ol>
     </div>
+    <!-- Academic Attribution Footer -->
+    <footer class="mt-10 border-t border-slate-200 pt-6 pb-10 text-center text-xs text-slate-500 space-y-2">
+      <div class="flex flex-wrap items-center justify-center gap-2 font-semibold text-slate-700">
+        <span>Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset</span>
+        <span class="text-slate-300">•</span>
+        <span>Version 1.0 (2026)</span>
+      </div>
+      <p class="text-slate-600">
+        &copy; 2026 <strong>Taiwan Institute of Sports Science (TISS)</strong>, Kaohsiung, Taiwan &amp; 
+        <strong>Institut Teknologi Sepuluh Nopember (ITS)</strong>, Surabaya, Indonesia.
+      </p>
+      <p class="text-slate-400">
+        Distributed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Creative Commons Attribution 4.0 International (CC-BY 4.0)</a> License.
+        Associated with <em>The 7th Global Conference on Biomedical Engineering (GCBME 2026)</em>.
+      </p>
+    </footer>
 
   </div>
+
+  <script>
+  function copyCitationText() {
+    const text = 'S.-J. Chen, T. A. Firdaus, and A. Syaifudin, "Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset," Taiwan Institute of Sports Science, 2026. [Online]. Available: https://sj0813.github.io/rowing_data1/';
+    navigator.clipboard.writeText(text).then(function() {
+      const lbl = document.getElementById("lblCopyText");
+      if (lbl) {
+        lbl.innerText = "Copied!";
+        setTimeout(function() { lbl.innerText = "Copy Citation"; }, 2500);
+      }
+    });
+  }
+
+  function copyBibtexText() {
+    const text = `@misc{chen2026rowing,
+  author       = {Chen, Shing-Jye and Firdaus, Tegar Anugrah and Syaifudin, Achmad},
+  title        = {Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset},
+  year         = {2026},
+  publisher    = {Taiwan Institute of Sports Science (TISS)},
+  howpublished = {\\url{https://sj0813.github.io/rowing_data1/}},
+  note         = {The 7th Global Conference on Biomedical Engineering (GCBME 2026)}
+}`;
+    navigator.clipboard.writeText(text).then(function() {
+      const lbl = document.getElementById("lblCopyBib");
+      if (lbl) {
+        lbl.innerText = "Copied!";
+        setTimeout(function() { lbl.innerText = "Copy BibTeX"; }, 2500);
+      }
+    });
+  }
+  </script>
 </body>
 </html>
