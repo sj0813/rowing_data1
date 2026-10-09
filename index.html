@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multi-Modal Rowing Ergometer Telemetry and Biomechanical Decoupling Dataset | Chen et al. (2026)</title>
-  <meta name="description" content="Official open dataset and interactive telemetry dashboards for multi-modal sensor synchronization and palmar force metrology in indoor rowing ergometry (Chen, Firdaus, Syaifudin, 2026, Taiwan Institute of Sports Science).">
+  <meta name="description" content="Official open dataset and interactive telemetry dashboards for metrological audit and multi-node telemetry synchronization of an embedded handlebar loadcell for rowing ergometry (Chen, Firdaus, Syaifudin, 2026, Taiwan Institute of Sports Science).">
   <meta name="author" content="Shing-Jye Chen, Tegar Anugrah Firdaus, Achmad Syaifudin">
   <meta name="keywords" content="rowing biomechanics, wearable telemetry, loadcell metrology, clock synchronization, open dataset, TISS">
   
@@ -88,7 +88,7 @@
         </h1>
         <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
           Official companion open dataset and interactive telemetry dashboards for the research study:
-          <span class="font-semibold text-slate-800">"Multi-Modal Sensor Synchronization and Palmar Force Metrology in Indoor Rowing Ergometry"</span>, 
+          <span class="font-semibold text-slate-800">"Metrological Audit and Multi-Node Telemetry Synchronization of an Embedded Handlebar Loadcell for Rowing Ergometry"</span>, 
           presented at <em>The 7th Global Conference on Biomedical Engineering &amp; Annual Meeting of Taiwanese Society of Biomedical Engineering (GCBME 2026 / TSME)</em>.
         </p>
       </div>
@@ -124,8 +124,32 @@
           </div>
           <div class="flex items-start gap-2 pt-1 text-slate-500">
             <span class="text-blue-600 font-bold">*</span>
-            <span>Correspondence &amp; Data Inquiries: <a href="mailto:chen.sj@tiss.org.tw" class="text-blue-600 hover:underline font-mono">chen.sj@tiss.org.tw</a> (Dr. Shing-Jye Chen)</span>
+            <span>Correspondence &amp; Data Inquiries: <a href="mailto:sjchen@tiss.org.tw" class="text-blue-600 hover:underline font-mono">sjchen@tiss.org.tw</a> (Dr. Shing-Jye Chen)</span>
           </div>
+        </div>
+      </div>
+
+      <!-- Official Study Abstract Card (GCBME 2026 Camera-Ready) -->
+      <div class="bg-blue-50/40 border border-blue-200/80 rounded-xl p-5 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-blue-100 pb-2.5">
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold text-blue-900 uppercase tracking-wider flex items-center gap-1.5">
+              <span>📄</span> Official Study Abstract (GCBME 2026 Camera-Ready)
+            </span>
+          </div>
+          <span class="text-[11px] font-mono bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full font-semibold">
+            Final Revised Abstract
+          </span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed text-justify">
+          Precise temporal integration between handle pulling kinetics and whole-body kinematics is fundamental in rowing biomechanics, because interpreting stroke efficiency depends on phase-locking force to movement landmarks. Land-ergometer studies have established the measurement basis for this: instrumented rowing systems validated for power output against the Concept2 ergometer [1], a systematic review of inertial sensing cataloguing handle-trajectory and stroke-phase measures [2], and motorized test rigs characterizing wind-braked ergometer behavior under controlled loading [3,4]. However, literature and training protocols routinely assume that independent commercial sensors record synchronously on nominal time bases, ignoring packet arrival jitter, effective sampling bottlenecks, and progressive clock drift (~100 ppm, accumulating ~31 ms over 5 min) that introduce artificial phase shifts and circular reasoning between force and motion. To address this gap, the purpose of this study was to conduct a multi-day temporal audit and validate a motion-derived affine synchronization framework. One healthy young participant performed at least 5 minutes of continuous steady-state rowing on each of three consecutive days (N = 1, 295 strokes), using a custom in-line handle loadcell (100 Hz), Novel loadpads (200 Hz) for hand and thumb, and a Noraxon IMU (200 Hz). The loadcell showed regular timestamps (96.17 ± 4.37% exact 10-ms intervals) and a reproducible clock separation of +103.3 ± 1.6 ppm (R² = 0.990), while the Novel hand unit delivered only 72.95 updates/s within its nominal 200-Hz grid. Motion-derived affine mapping achieved sub-millisecond alignment without circular force reliance (median residual lag 0.516 ± 0.177 ms; 95% limits of agreement −1.77 to +1.85 ms), and peak-anchored dissection resolved every motion-defined cycle (242.1 ± 33.6 N peak handle force, 20.05 ± 0.81 SPM). This framework provides sports scientists and coaches with an auditable, sub-millisecond telemetry standard for phase-accurate force–motion feedback during land rowing ergometer training.
+        </p>
+        <div class="pt-1 flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+          <span class="font-bold text-slate-700">Keywords:</span>
+          <span class="bg-white border border-blue-200 px-2 py-0.5 rounded text-[11px] font-medium text-slate-700">rowing biomechanics</span>
+          <span class="bg-white border border-blue-200 px-2 py-0.5 rounded text-[11px] font-medium text-slate-700">clock drift</span>
+          <span class="bg-white border border-blue-200 px-2 py-0.5 rounded text-[11px] font-medium text-slate-700">synchronization</span>
+          <span class="bg-white border border-blue-200 px-2 py-0.5 rounded text-[11px] font-medium text-slate-700">wearable sensors</span>
         </div>
       </div>
 
@@ -205,7 +229,7 @@
               <h2 class="text-base font-bold text-slate-900">Multi-Day Kinematic Consistency Analysis (Bar Charts)</h2>
             </div>
             <p class="text-xs text-slate-600 leading-relaxed">
-              Comparison of Raw Phase Durations (Drive 2.02–2.07s, Recovery 0.92–0.98s, Total 2.98–3.00s) and Normalized Cycle Proportions (Drive 67.4–69.2%, Recovery 30.8–32.6%) across all 295 consecutive strokes over 3 testing days.
+              Comparison of Raw Phase Durations (Drive 2.09–2.18s, Recovery 0.83–0.90s, Total 2.98–3.01s) and Normalized Cycle Proportions (Drive 69.9–72.3%, Recovery 27.7–30.1%, Pooled Drive 71.5 ± 3.4%) across all 295 consecutive strokes over 3 testing days.
             </p>
           </div>
           <div class="flex items-center space-x-2">
@@ -340,38 +364,38 @@
           <tbody class="divide-y divide-slate-100 text-slate-600">
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Drive Duration (s)</td>
-              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.02 ± 0.06 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.07 ± 0.05 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.05 ± 0.06 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">2.05 ± 0.06 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.094 ± 0.084 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.153 ± 0.088 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.175 ± 0.092 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">2.141 ± 0.095 s</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery Duration (s)</td>
-              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.98 ± 0.09 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.92 ± 0.09 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.93 ± 0.11 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">0.94 ± 0.10 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.903 ± 0.118 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.829 ± 0.110 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.837 ± 0.127 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">0.856 ± 0.122 s</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Total Stroke Duration (s)</td>
-              <td class="py-2 px-3.5 text-center font-bold text-slate-700">3.00 ± 0.11 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.99 ± 0.08 s</td>
-              <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.98 ± 0.09 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.997 ± 0.113 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.982 ± 0.102 s</td>
+              <td class="py-2 px-3.5 text-center font-bold text-slate-700">3.012 ± 0.147 s</td>
               <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">2.997 ± 0.122 s</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Drive Phase Fraction (%)</td>
-              <td class="py-2 px-3.5 text-center text-rose-600">67.4 ± 2.6%</td>
-              <td class="py-2 px-3.5 text-center text-rose-600">69.2 ± 2.2%</td>
-              <td class="py-2 px-3.5 text-center text-rose-600">68.7 ± 2.8%</td>
-              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">68.4 ± 2.6%</td>
+              <td class="py-2 px-3.5 text-center text-rose-600">69.9 ± 3.2%</td>
+              <td class="py-2 px-3.5 text-center text-rose-600">72.2 ± 3.1%</td>
+              <td class="py-2 px-3.5 text-center text-rose-600">72.3 ± 3.2%</td>
+              <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">71.5 ± 3.4%</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery Phase Fraction (%)</td>
-              <td class="py-2 px-3.5 text-center text-blue-600">32.6 ± 2.6%</td>
-              <td class="py-2 px-3.5 text-center text-blue-600">30.8 ± 2.2%</td>
-              <td class="py-2 px-3.5 text-center text-blue-600">31.3 ± 2.8%</td>
-              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">31.6 ± 2.6%</td>
+              <td class="py-2 px-3.5 text-center text-blue-600">30.1 ± 3.2%</td>
+              <td class="py-2 px-3.5 text-center text-blue-600">27.8 ± 3.1%</td>
+              <td class="py-2 px-3.5 text-center text-blue-600">27.7 ± 3.2%</td>
+              <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">28.5 ± 3.4%</td>
             </tr>
             <tr class="hover:bg-slate-50">
               <td class="py-2 px-3.5 font-semibold text-slate-800">Stroke Cadence (SPM)</td>
@@ -402,18 +426,18 @@
       const BAR_DATA = {
         days: ["Day 1", "Day 2", "Day 3"],
         raw: {
-          drive: [2.02, 2.07, 2.05],
-          drive_sd: [0.06, 0.05, 0.06],
-          rec: [0.98, 0.92, 0.93],
-          rec_sd: [0.09, 0.09, 0.11],
-          total: [3.00, 2.99, 2.98],
-          total_sd: [0.11, 0.08, 0.09]
+          drive: [2.09, 2.15, 2.18],
+          drive_sd: [0.08, 0.09, 0.09],
+          rec: [0.90, 0.83, 0.84],
+          rec_sd: [0.12, 0.11, 0.13],
+          total: [3.00, 2.98, 3.01],
+          total_sd: [0.11, 0.10, 0.15]
         },
         norm: {
-          drive: [67.4, 69.2, 68.7],
-          drive_sd: [2.6, 2.2, 2.8],
-          rec: [32.6, 30.8, 31.3],
-          rec_sd: [2.6, 2.2, 2.8]
+          drive: [69.9, 72.2, 72.3],
+          drive_sd: [3.2, 3.1, 3.2],
+          rec: [30.1, 27.8, 27.7],
+          rec_sd: [3.2, 3.1, 3.2]
         }
       };
 

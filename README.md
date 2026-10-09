@@ -5,19 +5,27 @@
 [![GCBME 2026](https://img.shields.io/badge/Conference-GCBME%202026-rose.svg)](https://sj0813.github.io/rowing_data1/)
 
 Official companion open dataset and interactive telemetry dashboards for the paper:  
-**"Multi-Modal Sensor Synchronization and Palmar Force Metrology in Indoor Rowing Ergometry"**  
+**"Metrological Audit and Multi-Node Telemetry Synchronization of an Embedded Handlebar Loadcell for Rowing Ergometry"**  
 Presented at *The 7th Global Conference on Biomedical Engineering & Annual Meeting of Taiwanese Society of Biomedical Engineering (GCBME 2026 / TSME)*.
 
 **Live Portal & Interactive Dashboards:** [https://sj0813.github.io/rowing_data1/](https://sj0813.github.io/rowing_data1/)
 
 ---
 
+## 📄 Study Abstract (GCBME 2026 Final Camera-Ready)
+
+> **Abstract:** Precise temporal integration between handle pulling kinetics and whole-body kinematics is fundamental in rowing biomechanics, because interpreting stroke efficiency depends on phase-locking force to movement landmarks. Land-ergometer studies have established the measurement basis for this: instrumented rowing systems validated for power output against the Concept2 ergometer [1], a systematic review of inertial sensing cataloguing handle-trajectory and stroke-phase measures [2], and motorized test rigs characterizing wind-braked ergometer behavior under controlled loading [3,4]. However, literature and training protocols routinely assume that independent commercial sensors record synchronously on nominal time bases, ignoring packet arrival jitter, effective sampling bottlenecks, and progressive clock drift (~100 ppm, accumulating ~31 ms over 5 min) that introduce artificial phase shifts and circular reasoning between force and motion. To address this gap, the purpose of this study was to conduct a multi-day temporal audit and validate a motion-derived affine synchronization framework. One healthy young participant performed at least 5 minutes of continuous steady-state rowing on each of three consecutive days (N = 1, 295 strokes), using a custom in-line handle loadcell (100 Hz), Novel loadpads (200 Hz) for hand and thumb, and a Noraxon IMU (200 Hz). The loadcell showed regular timestamps (96.17 ± 4.37% exact 10-ms intervals) and a reproducible clock separation of +103.3 ± 1.6 ppm (R² = 0.990), while the Novel hand unit delivered only 72.95 updates/s within its nominal 200-Hz grid. Motion-derived affine mapping achieved sub-millisecond alignment without circular force reliance (median residual lag 0.516 ± 0.177 ms; 95% limits of agreement −1.77 to +1.85 ms), and peak-anchored dissection resolved every motion-defined cycle (242.1 ± 33.6 N peak handle force, 20.05 ± 0.81 SPM). This framework provides sports scientists and coaches with an auditable, sub-millisecond telemetry standard for phase-accurate force–motion feedback during land rowing ergometer training.
+> 
+> **Keywords:** rowing biomechanics; clock drift; synchronization; wearable sensors
+
+---
+
 ## 👥 Authors & Affiliations
-* **Shing-Jye Chen, Ph.D.**<sup>1,*</sup> (Lead Investigator & Corresponding Author, `chen.sj@tiss.org.tw`)
+* **Shing-Jye Chen, Ph.D.**<sup>1,*</sup> (Lead Investigator & Corresponding Author, `sjchen@tiss.org.tw`)
 * **Tegar Anugrah Firdaus**<sup>2</sup>
 * **Achmad Syaifudin, S.T., M.T.**<sup>2</sup>
 
-<sup>1</sup> **Department of Sports Biomechanics, Taiwan Institute of Sports Science (TISS)**, No. 419, Shibo Rd., Zuoying Dist., Kaohsiung 813013, Taiwan  
+<sup>1</sup> **Department of Sports Biomechanics, Taiwan Institute of Sports Science (TISS)**, No. 419, Shibo Rd., Zuoying Dist., Kaohsiung 813282, Taiwan  
 <sup>2</sup> **Department of Medical Technology, Institut Teknologi Sepuluh Nopember (ITS)**, Sukolilo, Surabaya 60111, Indonesia  
 
 ---
@@ -47,14 +55,14 @@ If you use this dataset, telemetry dashboards, or synchronization framework in y
 * **Cohort Scope**: 295 consecutive strokes across 3 independent testing days (Day 1: 96 strokes, Day 2: 100 strokes, Day 3: 99 strokes).
 * **Clock Synchronization**: Kinematic cross-correlation anchors using 3D resultant angular velocity ($G_{res}$). Hardware clock drift of $+103.3$ ppm corrected to a sub-millisecond residual lag of $0.516$ ms.
 * **Sensor Modalities**:
-  * Custom Handle Tensile Loadcell ($0–500$ N, $500$ Hz)
-  * Novel Palmar & Dorsal Metrology ($500$ Hz, $450$ N range)
-  * 3-Way Noraxon 3D IMU/Gyroscopes ($500$ Hz, $\pm 2000$ °/s)
+  * Custom Handle Tensile Loadcell ($0–500$ N, $100$ Hz)
+  * Novel Palmar & Dorsal Metrology ($200$ Hz nominal export grid, $73$ Hz effective update rate)
+  * 3-Way Noraxon 3D IMU/Gyroscopes ($200$ Hz, $\pm 2000$ °/s)
   * Instrumented Footplate Transducers ($0–550$ N)
 * **Pooled Biomechanical Metrics (Mean ± SD)**:
   * Peak Handle Pull Force: **$242.1 \pm 33.6$ N**
   * Stroke Cadence: **$20.05 \pm 0.81$ SPM**
-  * Cycle Duration: **$2.997 \pm 0.122$ s** (Drive: $2.05 \pm 0.06$ s / $68.4\%$; Recovery: $0.94 \pm 0.10$ s / $31.6\%$)
+  * Cycle Duration: **$2.997 \pm 0.122$ s** (Drive: $2.141 \pm 0.095$ s / $71.5 \pm 3.4\%$; Recovery: $0.856 \pm 0.122$ s / $28.5 \pm 3.4\%$)
   * Duplicate Packet Suppression: **$63.52\%$** (Novel BLE telemetry pipeline)
 
 ---
