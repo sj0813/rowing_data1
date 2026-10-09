@@ -430,6 +430,294 @@
     }
     </script>
 
+        <!-- OFFICIAL CAMERA-READY CONFERENCE TABLES CARD -->
+    <div id="sectionConferenceTables" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 border border-indigo-200 uppercase tracking-wider">
+              📊 Official Conference Tables
+            </span>
+            <span class="text-xs text-slate-500 font-mono">GCBME 2026 Camera-Ready Proceedings</span>
+          </div>
+          <h2 class="text-xl font-extrabold text-slate-900 mt-1">Official Publication Tables (Tables 1, 2, and 3)</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+            These interactive tables directly provide the complete multi-day telemetry regularity audits, cross-device hardware clock synchronization parameters, and 295-stroke biomechanical dissection from the research manuscript.
+          </p>
+        </div>
+
+        <!-- Table Tabs -->
+        <div class="flex items-center space-x-1.5 bg-slate-100 p-1.5 rounded-xl text-xs font-semibold">
+          <button onclick="switchConfTable(1)" id="btnConfTab1" class="px-3.5 py-1.5 rounded-lg bg-blue-600 text-white shadow-sm transition-all font-bold cursor-pointer">
+            Table 1: Timing Audit
+          </button>
+          <button onclick="switchConfTable(2)" id="btnConfTab2" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all font-medium cursor-pointer">
+            Table 2: Clock Drift &amp; Sync
+          </button>
+          <button onclick="switchConfTable(3)" id="btnConfTab3" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all font-medium cursor-pointer">
+            Table 3: 295-Stroke Biomechanics
+          </button>
+        </div>
+      </div>
+
+      <!-- Table Display Containers -->
+      <!-- Table 1 Container -->
+      <div id="panelConfTab1" class="space-y-4">
+        <!-- Highlights Bar -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+          <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-3">
+            <span class="font-bold text-blue-900 block">Loadcell Regularity</span>
+            <span class="text-slate-700 text-xs">96.17 ± 4.37% exact 10.000 ms intervals across all 3 days</span>
+          </div>
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-3">
+            <span class="font-bold text-emerald-900 block">Cumulative Residual</span>
+            <span class="text-slate-700 text-xs">0.000 ± 0.000 ms with zero backward timestamp intervals</span>
+          </div>
+          <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-3">
+            <span class="font-bold text-amber-900 block">Novel Effective Update Rate</span>
+            <span class="text-slate-700 text-xs">72.95 updates/s (63.52% duplicated rows within 200 Hz grid)</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-2xs">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+              <tr>
+                <th class="py-2.5 px-3.5">Metrological Timing Metric</th>
+                <th class="py-2.5 px-3.5 text-center bg-blue-50/40 text-blue-800">Day 1 (N = 96)</th>
+                <th class="py-2.5 px-3.5 text-center bg-blue-50/40 text-blue-800">Day 2 (N = 100)</th>
+                <th class="py-2.5 px-3.5 text-center bg-blue-50/40 text-blue-800">Day 3 (N = 99)</th>
+                <th class="py-2.5 px-3.5 text-center bg-slate-100 font-extrabold text-slate-900">3-Day Pooled Benchmark</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-600">
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Loadcell exact 10-ms intervals (%)</td>
+                <td class="py-2.5 px-3.5 text-center font-bold text-blue-700">99.39%</td>
+                <td class="py-2.5 px-3.5 text-center font-bold text-blue-700">97.91%</td>
+                <td class="py-2.5 px-3.5 text-center font-bold text-blue-700">91.20%</td>
+                <td class="py-2.5 px-3.5 text-center font-extrabold text-blue-900 bg-slate-50/50">96.17 ± 4.37%</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Loadcell median &Delta;t (ms)</td>
+                <td class="py-2.5 px-3.5 text-center font-mono">10.000 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono">10.000 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono">10.000 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-bold text-slate-900 bg-slate-50/50">10.000 ms</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Loadcell cumulative grid residual (ms)</td>
+                <td class="py-2.5 px-3.5 text-center font-mono text-emerald-600 font-bold">0.000 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono text-emerald-600 font-bold">0.000 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono text-emerald-600 font-bold">0.000 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-extrabold text-emerald-700 bg-slate-50/50">0.000 ± 0.000 ms</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Novel repeated 6-axis IMU rows (%)</td>
+                <td class="py-2.5 px-3.5 text-center text-rose-600 font-semibold">63.51%</td>
+                <td class="py-2.5 px-3.5 text-center text-rose-600 font-semibold">63.55%</td>
+                <td class="py-2.5 px-3.5 text-center text-rose-600 font-semibold">63.51%</td>
+                <td class="py-2.5 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">63.52 ± 0.02%</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Novel effective update rate (updates/s)</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-bold text-amber-700">72.97</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-bold text-amber-700">72.90</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-bold text-amber-700">72.97</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-extrabold text-amber-800 bg-slate-50/50">72.95 ± 0.04</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs text-slate-700 leading-relaxed">
+          <span class="font-bold text-slate-900">Table 1. Native timing regularity and effective update audit across 3 days:</span>
+          The custom handlebar loadcell system demonstrated sub-microsecond interval clock regularity (96.17% exact 10.000 ms, zero backward timestamps, and 0.000 ms final cumulative residual). In contrast, Novel loadpad capacitive sensors delivered an effective update frequency of 72.95 updates/s due to 63.52% repetitive packets, verifying that nominal file export frequency (200 Hz) does not guarantee true telemetry rate.
+        </div>
+      </div>
+
+      <!-- Table 2 Container -->
+      <div id="panelConfTab2" class="hidden space-y-4">
+        <!-- Highlights Bar -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+          <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-3">
+            <span class="font-bold text-blue-900 block">Clock Separation Rate</span>
+            <span class="text-slate-700 text-xs">+103.3 ± 1.6 ppm progressive drift (~31 ms over 5 min)</span>
+          </div>
+          <div class="bg-indigo-50/70 border border-indigo-200 rounded-xl p-3">
+            <span class="font-bold text-indigo-900 block">Cross-Correlation Linearity</span>
+            <span class="text-slate-700 text-xs">Near-perfect separation linearity (R² = 0.990 ± 0.011)</span>
+          </div>
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-3">
+            <span class="font-bold text-emerald-900 block">Affine Alignment Precision</span>
+            <span class="text-slate-700 text-xs">0.516 ± 0.177 ms median held-out lag, 0.04 ms bias</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-2xs">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+              <tr>
+                <th class="py-2.5 px-3.5">Temporal Validation Metric</th>
+                <th class="py-2.5 px-3.5 text-center bg-indigo-50/40 text-indigo-800">Day 1</th>
+                <th class="py-2.5 px-3.5 text-center bg-indigo-50/40 text-indigo-800">Day 2</th>
+                <th class="py-2.5 px-3.5 text-center bg-indigo-50/40 text-indigo-800">Day 3</th>
+                <th class="py-2.5 px-3.5 text-center bg-slate-100 font-extrabold text-slate-900">3-Day Pooled Benchmark</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-600">
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Noraxon–Loadcell separation (ppm)</td>
+                <td class="py-2.5 px-3.5 text-center font-bold text-indigo-700">+105.0 ± 1.2</td>
+                <td class="py-2.5 px-3.5 text-center font-bold text-indigo-700">+103.1 ± 1.4</td>
+                <td class="py-2.5 px-3.5 text-center font-bold text-indigo-700">+101.8 ± 2.9</td>
+                <td class="py-2.5 px-3.5 text-center font-extrabold text-indigo-900 bg-slate-50/50">+103.3 ± 1.6 ppm</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Noraxon–Loadcell linearity (R²)</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold">0.997</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold">0.995</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold">0.977</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-extrabold text-slate-900 bg-slate-50/50">0.990 ± 0.011</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Motion correlation quality (mean r<sub>max</sub>)</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold">0.989</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold">0.992</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold">0.972</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-extrabold text-slate-900 bg-slate-50/50">0.984 ± 0.011</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Held-out median |residual lag| (ms)</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-bold text-emerald-600">0.362 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-bold text-emerald-600">0.476 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-bold text-emerald-600">0.709 ms</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-extrabold text-emerald-700 bg-slate-50/50">0.516 ± 0.177 ms</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3.5 font-semibold text-slate-800">Held-out post-sync residual slope (ppm)</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold text-slate-700">−0.04</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold text-slate-700">−0.10</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-semibold text-slate-700">−0.11</td>
+                <td class="py-2.5 px-3.5 text-center font-mono font-extrabold text-slate-900 bg-slate-50/50">−0.08 ± 0.04 ppm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs text-slate-700 leading-relaxed">
+          <span class="font-bold text-slate-900">Table 2. Cross-device clock separation and held-out affine validation across 3 days:</span>
+          Repeated motion window cross-correlation revealed a linear, deterministic hardware clock separation (+103.3 ± 1.6 ppm, R² = 0.990). Commercial device triangulation confirmed internal clock closure error within 3.6 ppm. Application of the motion-derived day-level affine mapping eliminated the progressive separation (held-out slope: −0.08 ± 0.04 ppm) and reduced held-out median absolute residual lag to 0.516 ± 0.177 ms (Bland–Altman 95% limits: −1.77 to +1.85 ms).
+        </div>
+      </div>
+
+      <!-- Table 3 Container -->
+      <div id="panelConfTab3" class="hidden space-y-4">
+        <!-- Highlights Bar -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+          <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-3">
+            <span class="font-bold text-blue-900 block">Complete Stroke Capture</span>
+            <span class="text-slate-700 text-xs">295 consecutive strokes (Day 1: 96, Day 2: 100, Day 3: 99), 0 dropouts</span>
+          </div>
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-3">
+            <span class="font-bold text-emerald-900 block">Temporal Cadence Stability</span>
+            <span class="text-slate-700 text-xs">2.997 ± 0.122 s cycle duration, 20.05 ± 0.81 SPM (p &gt; 0.05)</span>
+          </div>
+          <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-3">
+            <span class="font-bold text-amber-900 block">Peak Pull Force</span>
+            <span class="text-slate-700 text-xs">242.1 ± 33.6 N mid-drive pull, monotonic decline (η² = 0.19)</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-2xs">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+              <tr>
+                <th class="py-2.5 px-3.5">Biomechanical Metric</th>
+                <th class="py-2.5 px-3.5 text-center bg-rose-50/50 text-rose-800">Day 1 (N = 96)</th>
+                <th class="py-2.5 px-3.5 text-center bg-blue-50/50 text-blue-800">Day 2 (N = 100)</th>
+                <th class="py-2.5 px-3.5 text-center bg-emerald-50/50 text-emerald-800">Day 3 (N = 99)</th>
+                <th class="py-2.5 px-3.5 text-center bg-slate-100 font-extrabold text-slate-900">All Days (N = 295)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-600">
+              <tr class="hover:bg-slate-50">
+                <td class="py-2 px-3.5 font-semibold text-slate-800">Cycle duration (s)</td>
+                <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.997 ± 0.113 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-slate-700">2.982 ± 0.102 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-slate-700">3.012 ± 0.147 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">2.997 ± 0.122 s</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2 px-3.5 font-semibold text-slate-800">Stroke cadence (SPM)</td>
+                <td class="py-2 px-3.5 text-center">20.05 ± 0.76</td>
+                <td class="py-2 px-3.5 text-center">20.15 ± 0.71</td>
+                <td class="py-2 px-3.5 text-center">19.96 ± 0.93</td>
+                <td class="py-2 px-3.5 text-center font-bold text-slate-900 bg-slate-50/50">20.05 ± 0.81</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2 px-3.5 font-semibold text-slate-800">Drive duration (s)</td>
+                <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.094 ± 0.084 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.153 ± 0.088 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-rose-600">2.175 ± 0.092 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">2.141 ± 0.095 s</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2 px-3.5 font-semibold text-slate-800">Drive phase fraction (%)</td>
+                <td class="py-2 px-3.5 text-center text-rose-600">69.9 ± 3.2%</td>
+                <td class="py-2 px-3.5 text-center text-rose-600">72.2 ± 3.1%</td>
+                <td class="py-2 px-3.5 text-center text-rose-600">72.3 ± 3.2%</td>
+                <td class="py-2 px-3.5 text-center font-bold text-rose-700 bg-slate-50/50">71.5 ± 3.4%</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery duration (s)</td>
+                <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.903 ± 0.118 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.829 ± 0.110 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-blue-600">0.837 ± 0.127 s</td>
+                <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">0.856 ± 0.122 s</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2 px-3.5 font-semibold text-slate-800">Recovery phase fraction (%)</td>
+                <td class="py-2 px-3.5 text-center text-blue-600">30.1 ± 3.2%</td>
+                <td class="py-2 px-3.5 text-center text-blue-600">27.8 ± 3.1%</td>
+                <td class="py-2 px-3.5 text-center text-blue-600">27.7 ± 3.2%</td>
+                <td class="py-2 px-3.5 text-center font-bold text-blue-700 bg-slate-50/50">28.5 ± 3.4%</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2 px-3.5 font-semibold text-slate-800">Peak handle force (N)</td>
+                <td class="py-2 px-3.5 text-center font-semibold text-amber-600">261.9 ± 29.5 N</td>
+                <td class="py-2 px-3.5 text-center font-semibold text-amber-600">238.1 ± 33.7 N</td>
+                <td class="py-2 px-3.5 text-center font-semibold text-amber-600">226.8 ± 27.7 N</td>
+                <td class="py-2 px-3.5 text-center font-bold text-amber-700 bg-slate-50/50">242.1 ± 33.6 N</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs text-slate-700 leading-relaxed">
+          <span class="font-bold text-slate-900">Table 3. Peak-anchored 295-stroke biomechanical dissection across 3 days:</span>
+          100.0% of motion-defined cycles contained exactly one independent force peak at 17.77 ± 0.67% of cycle. Stroke duration (2.997 ± 0.122 s) and cadence (20.05 ± 0.81 SPM) were invariant across days (F = 1.55, H = 1.35, p &gt; 0.05), whereas Drive duration lengthened monotonically (2.094 &rarr; 2.153 &rarr; 2.175 s) and peak handle force declined monotonically (261.9 &rarr; 238.1 &rarr; 226.8 N, a 13.4% reduction, &eta;&sup2; = 0.19).
+        </div>
+      </div>
+    </div>
+
+    <script>
+    function switchConfTable(tabNum) {
+      [1, 2, 3].forEach(n => {
+        const btn = document.getElementById(`btnConfTab${n}`);
+        const panel = document.getElementById(`panelConfTab${n}`);
+        if (n === tabNum) {
+          if (btn) btn.className = "px-3.5 py-1.5 rounded-lg bg-blue-600 text-white shadow-sm transition-all font-bold cursor-pointer";
+          if (panel) panel.classList.remove("hidden");
+        } else {
+          if (btn) btn.className = "px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all font-medium cursor-pointer";
+          if (panel) panel.classList.add("hidden");
+        }
+      });
+    }
+    </script>
+
+
     <!-- EMBEDDED BAR CHARTS SECTION -->
     <div id="sectionBarCharts" class="space-y-4">
       
