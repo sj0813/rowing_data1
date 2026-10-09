@@ -61,9 +61,9 @@ If you use this dataset, telemetry dashboards, or synchronization framework in y
 
 ## 💻 Files & Interactive Dashboards
 1. **`index.html`**: Master research portal, cross-day metrics synthesis table, and interactive bar charts (Publication Figure 2).
-2. **`raw_multichannel_rowing_dashboard.html`**: Continuous synchronized physical time series (295 strokes) with separated loadcell handle force, palmar hand force, thumb force, footplate forces, and 3-axis gyroscopes.
-3. **`gyro_synchronization_dashboard.html`**: Kinematic cross-correlation synchronization based on resultant angular velocity ($G_{res}$), verifying $+103.3$ ppm hardware clock drift correction and $0.516$ ms residual lag.
-4. **`rowing_cycle_dissection_dashboard.html`**: Catch-to-Catch cycle segmentation, drive/recovery phase decomposition, and 182-cycle searchable metric table.
+2. **`gyro_synchronization_dashboard.html`**: 1. Gyroscope synchronization dashboard — Kinematic cross-correlation synchronization based on resultant angular velocity ($G_{res}$), verifying $+103.3$ ppm hardware clock drift correction and $0.516$ ms residual lag.
+3. **`rowing_cycle_dissection_dashboard.html`**: 2. Rowing cycle dissection dashboard — Catch-to-Catch cycle segmentation, drive/recovery phase decomposition, and complete 295-stroke searchable metric table.
+4. **`raw_multichannel_rowing_dashboard.html`**: 3. Raw multi-channel dashboard — Continuous synchronized physical time series (295 strokes) with separated loadcell handle force, palmar hand force, thumb force, footplate forces, and 3-axis gyroscopes.
 
 ---
 
